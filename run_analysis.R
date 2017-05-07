@@ -116,5 +116,5 @@ Tidy_Data_set<- arrange(Tidy_set,activity.name,subjectid)
 
 
 write.table(Tidy_Data_set, file="G:/Data Science Project/Getting and Cleaning Data/Project Assignment/Tidy_Data_set.txt",
-            sep="\t", col.names = TRUE, row.names = FALSE)
+            col.names = TRUE, row.names = FALSE)
             
