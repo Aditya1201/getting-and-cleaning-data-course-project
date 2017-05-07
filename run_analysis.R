@@ -1,3 +1,12 @@
+#The following one R script called run_analysis.R that does the following.
+
+#Merges the training and the test sets to create one data set.
+#Extracts only the measurements on the mean and standard deviation for each measurement.
+#Uses descriptive activity names to name the activities in the data set
+#Appropriately labels the data set with descriptive variable names.
+#From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
 #Importing all the 8 text files into R: (Line 2 to Line 66)
 
 activity_labels <- read.table(file="G:/Data Science Project/Getting and Cleaning Data/Project Assignment/UCI HAR Dataset/activity_labels.txt"
@@ -106,4 +115,6 @@ final<- Master_data3 %>%  group_by(activity.name,subjectid) %>% summarise_each(f
 Tidy_Data_set<- arrange(Tidy_set,activity.name,subjectid)
 
 
-write.table(Tidy_Data_set, file="G:/Data Science Project/Getting and Cleaning Data/Project Assignment/Tidy_Data_set.txt",row.names = FALSE)
+write.table(Tidy_Data_set, file="G:/Data Science Project/Getting and Cleaning Data/Project Assignment/Tidy_Data_set.txt",
+            sep="\t", col.names = TRUE, row.names = FALSE)
+            
